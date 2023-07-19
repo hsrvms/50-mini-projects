@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  
+  width: 300px;
+  max-width: 100%;
+
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  
+  width: 99%;
+  border: 1px solid #cfcece;
+}
+
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  
+  width: 0%;
+  border: 1px solid #4c4cc9da;
+  transition: .3s ease-in;
+}
+
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2rem;
+  aspect-ratio: 1;
+  background-color: #fff;
+  
+  border: 2px solid #cfcece;
+  border-radius: 50px;
+
+  transition: all .5s ease-in;
+}
+
+.step.active {
+  border-color: #4c4cc9da;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: .4rem 1.2rem;
+  background-color: #4c4cc9da;
+  color: #fff;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: all .3s ease-in-out;
+}
+
+.btn:disabled {
+  background-color: #cfcece;
+  cursor: not-allowed;
+}
+
+.btn:active {
+  transform: scale(.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
